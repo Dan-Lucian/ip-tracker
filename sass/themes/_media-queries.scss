@@ -1,0 +1,11 @@
+// -----------------------------------------------------------------------------
+// This file contains specific breakpoint styling
+// -----------------------------------------------------------------------------
+
+@media screen and (min-width: map-get($breakpoints, 'medium')) {
+  .app-body {
+    column-count: 4;
+    column-rule: 2px solid $color-rule;
+    text-align: left;
+  }
+}

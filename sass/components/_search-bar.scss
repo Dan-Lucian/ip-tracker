@@ -1,0 +1,41 @@
+// -----------------------------------------------------------------------------
+// This file contains search-bar styling
+// -----------------------------------------------------------------------------
+
+.search-bar {
+  width: 100%;
+  background: $color-text-title;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  overflow: hidden;
+  max-width: 600px;
+
+  & form {
+    display: flex;
+    width: 100%;
+  }
+}
+
+.search-bar__input {
+  margin: 1rem;
+  background-color: inherit;
+  outline: none;
+  border: none;
+  flex-grow: 1;
+  cursor: pointer;
+  min-width: 100px;
+  color: $text-color;
+}
+
+.search-bar__submit {
+  padding: 0;
+  margin: 0;
+  border: none;
+  display: block;
+  min-width: 70px;
+  background-color: #000;
+  background-image: url(../../img/icon-arrow.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}

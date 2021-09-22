@@ -1,0 +1,44 @@
+// -----------------------------------------------------------------------------
+// This file contains very basic styles.
+// -----------------------------------------------------------------------------
+
+/**
+ * Set up a decent box model on the root element
+ */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  @include flexCenter(column);
+  background-image: url(../../img/pattern-bg.png);
+  background-repeat: no-repeat;
+}
+
+/**
+ * Basic styles for links
+ */
+a {
+  color: $brand-color;
+  text-decoration: none;
+
+  @include on-event {
+    color: $text-color;
+    text-decoration: underline;
+  }
+}
+
+/**
+ * Don't know why but it helps 
+ */
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}

@@ -1,0 +1,23 @@
+// -----------------------------------------------------------------------------
+// This file contains app info body styling
+// -----------------------------------------------------------------------------
+
+.app-body {
+  border-radius: 10px;
+  background: $color-text-title;
+  text-align: center;
+  font-weight: 700;
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.app-info:not(:last-of-type) {
+  margin-bottom: 1.5rem;
+}
+
+.app-info__title {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: $color-text-mini-title;
+}
