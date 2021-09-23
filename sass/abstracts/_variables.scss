@@ -7,9 +7,8 @@ $color-text-title: #fff;
 $color-text-mini-title: hsl(0, 0%, 59%);
 $color-rule: rgba(170, 170, 180, 0.3);
 
-
-
-
+$color-pop-up-message-bg-light: #000;
+$color-pop-up-message-text-light: #fff;
 
 /// Regular font family
 /// @type List
@@ -49,14 +48,11 @@ $max-width: 1180px !default;
 /// @prop {String} keys - Keys are identifiers mapped to a given length
 /// @prop {Map} values - Values are actual breakpoints expressed in pixels
 
-$breakpoints:
- (
+$breakpoints: (
   'small': 320px,
   'medium': 768px,
   'large': 1024px,
 ) !default;
-
-
 
 /// Relative or absolute URL where all assets are served from
 /// @type String
