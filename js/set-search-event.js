@@ -1,4 +1,5 @@
 import { showMessage } from './helpers.js';
+import { updateMap } from './setup-map.js';
 
 export function setSearchEvent() {
   const form = document.getElementById('form');
@@ -11,8 +12,9 @@ async function onSubmit() {
   const ip = document.getElementById('ip-input').value;
 
   if (isValid(ip)) {
-    // it works
+    // // it works
     // const ipData = await fetchData(ip);
+    // console.log(JSON.stringify(ipData, null, 2));
     const cachedIpData = getCachedIpData();
     console.log(cachedIpData);
 

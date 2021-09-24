@@ -3,12 +3,15 @@
 // -----------------------------------------------------------------------------
 
 .app-body {
+  position: absolute;
+  z-index: 10;
+  bottom: -44px; // half of container height
   border-radius: 10px;
   background: $color-text-title;
   text-align: center;
   font-weight: 700;
   padding: 1.5rem;
-  width: 100%;
+  width: 90vw;
   max-width: 1000px;
 }
 

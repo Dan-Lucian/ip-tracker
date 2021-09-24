@@ -3,6 +3,21 @@
 // -----------------------------------------------------------------------------
 
 main {
-  width: 90vw;
+  width: 100%;
+  padding-bottom: 55px; // just looks good
   @include flexCenter(column);
+
+  position: relative;
+  
+  background-image: url(../../img/pattern-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.app-title {
+  color: $color-text-title;
+  padding: 1.5rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 1px;
 }

@@ -19,9 +19,16 @@
 
     <!-- Ipify key -->
     <script src="js/config.js"></script>
-    
+
+    <!-- Leaflet script -->
+    <!-- <script defer src="js/leaflet.js"></script> -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+
     <!-- My Script -->
     <script type="module" src="js/script.js"></script>
+
   </head>
 
   <body>
@@ -29,11 +36,8 @@
     <!--                     Header                        -->
     <!-- ------------------------------------------------- -->
 
-    <header>
-      <div class="app-title">IP Address Tracker</div>
-    </header>
-
     <main>
+      <div class="app-title">IP Address Tracker</div>
       <div class="search-bar">
         <form id="form" action="">
           <input
@@ -67,5 +71,7 @@
         </div>
       </div>
     </main>
+
+    <div class="map" id="mapid"></div>
   </body>
 </html>
