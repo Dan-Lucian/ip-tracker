@@ -1,20 +1,32 @@
 'use strict';
 
-export function setupMap() {
-  var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+export function setupMap(lat, long) {
+  // create map
+  var mymap = L.map('mapid').setView([lat, long], 13);
 
-  // L.tileLayer(
-  //   'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}',
-  //   {
-  //     attribution:
-  //       'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-  //     maxZoom: 18,
-  //     id: 'mapbox/streets-v11',
-  //     tileSize: 512,
-  //     zoomOffset: -1,
-  //     accessToken: config.mapboxKey,
-  //   }
-  // ).addTo(mymap);
+  // add circle marker
+  var circle = L.circle([lat, long], {
+    color: 'red',
+    fillColor: '#f03',
+    fillOpacity: 0.5,
+    radius: 1000,
+  }).addTo(mymap);
+
+  // set a tooltip for the marker
+  circle.bindPopup('Here is the location)').openPopup();
+
+  L.tileLayer(
+    'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}',
+    {
+      attribution:
+        'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+      maxZoom: 18,
+      id: 'mapbox/streets-v11',
+      tileSize: 512,
+      zoomOffset: -1,
+      accessToken: config.mapboxKey,
+    }
+  ).addTo(mymap);
 }
 
 export function updateMap() {}

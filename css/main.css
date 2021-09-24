@@ -1258,7 +1258,7 @@ main {
 
 .app-body {
   position: absolute;
-  z-index: 10;
+  z-index: 500;
   bottom: -44px;
   border-radius: 10px;
   background: #fff;

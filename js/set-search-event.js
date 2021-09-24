@@ -1,5 +1,6 @@
 import { showMessage } from './helpers.js';
-import { updateMap } from './setup-map.js';
+import { setupMap } from './setup-map.js';
+import { vertAlignInfoBody } from './helpers.js';
 
 export function setSearchEvent() {
   const form = document.getElementById('form');
@@ -12,11 +13,15 @@ async function onSubmit() {
   const ip = document.getElementById('ip-input').value;
 
   if (isValid(ip)) {
-    // // it works
-    // const ipData = await fetchData(ip);
-    // console.log(JSON.stringify(ipData, null, 2));
-    const cachedIpData = getCachedIpData();
-    console.log(cachedIpData);
+    // it works
+    const ipData = await fetchData(ip);
+    console.log(JSON.stringify(ipData, null, 2));
+    // const ipData = getCachedIpData();
+    // console.log(ipData);
+
+    updateInfoBody(ipData);
+    vertAlignInfoBody();
+    setupMap(ipData.location.lat, ipData.location.lng);
 
     return;
   }
@@ -70,4 +75,13 @@ function getCachedIpData() {
       tor: false,
     },
   };
+}
+
+function updateInfoBody(ipData) {
+  document.getElementById('ip-address').innerHTML = ipData.ip;
+  document.getElementById('timezone').innerHTML = ipData.location.timezone;
+  document.getElementById('isp').innerHTML = ipData.isp;
+  document.getElementById('location').innerHTML =
+    `${ipData.location.country}, ` +
+    ` ${ipData.location.region}, ${ipData.location.city}`;
 }
