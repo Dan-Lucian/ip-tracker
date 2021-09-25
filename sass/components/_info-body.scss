@@ -5,7 +5,7 @@
 .app-body {
   position: absolute;
   z-index: 500;
-  bottom: -44px; // half of container height
+  top: 170px; // looks good
   border-radius: 10px;
   background: $color-text-title;
   text-align: center;

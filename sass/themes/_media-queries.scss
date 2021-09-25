@@ -8,4 +8,12 @@
     column-rule: 2px solid $color-rule;
     text-align: left;
   }
+
+  main{
+    padding-bottom: 55px;
+  }
+
+  body{
+    font: normal 125% / 1.4 $text-font-stack;
+  }
 }

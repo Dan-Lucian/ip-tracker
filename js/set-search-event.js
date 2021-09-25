@@ -1,6 +1,5 @@
 import { showMessage } from './helpers.js';
-import { setupMap } from './setup-map.js';
-import { vertAlignInfoBody } from './helpers.js';
+import { setupMap, updateMap } from './setup-map.js';
 
 export function setSearchEvent() {
   const form = document.getElementById('form');
@@ -15,13 +14,12 @@ async function onSubmit() {
   if (isValid(ip)) {
     // it works
     const ipData = await fetchData(ip);
-    console.log(JSON.stringify(ipData, null, 2));
-    // const ipData = getCachedIpData();
-    // console.log(ipData);
 
     updateInfoBody(ipData);
-    vertAlignInfoBody();
-    setupMap(ipData.location.lat, ipData.location.lng);
+
+    let map;
+    map = setupMap(ipData.location.lat, ipData.location.lng);
+    map = updateMap(map, ipData.location.lat, ipData.location.lng);
 
     return;
   }

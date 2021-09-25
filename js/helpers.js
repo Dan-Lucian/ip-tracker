@@ -13,8 +13,3 @@ export function showMessage(text) {
     message.classList.remove('pop-up-message--fade-in');
   }, 1500);
 }
-
-export function vertAlignInfoBody() {
-  const container = document.getElementById('app-body');
-  container.style.bottom = `-${container.getBoundingClientRect().height / 2}px`;
-}

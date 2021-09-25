@@ -2,8 +2,14 @@
 
 export function setupMap(lat, long) {
   // create map
-  var mymap = L.map('mapid').setView([lat, long], 13);
+  if (window.innerWidth < 768) {
+    return L.map('mapid').setView([lat + 0.01, long], 13);
+  }
 
+  return L.map('mapid').setView([lat, long], 13);
+}
+
+export function updateMap(mymap, lat, long) {
   // add circle marker
   var circle = L.circle([lat, long], {
     color: 'red',
@@ -13,7 +19,7 @@ export function setupMap(lat, long) {
   }).addTo(mymap);
 
   // set a tooltip for the marker
-  circle.bindPopup('Here is the location)').openPopup();
+  circle.bindPopup('Somewhere around here').openPopup();
 
   L.tileLayer(
     'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}',
@@ -28,5 +34,3 @@ export function setupMap(lat, long) {
     }
   ).addTo(mymap);
 }
-
-export function updateMap() {}

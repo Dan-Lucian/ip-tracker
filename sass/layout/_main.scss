@@ -4,7 +4,7 @@
 
 main {
   width: 100%;
-  padding-bottom: 55px; // just looks good
+  padding-bottom: 90px; // just looks good
   @include flexCenter(column);
 
   position: relative;
