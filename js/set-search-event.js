@@ -1,5 +1,5 @@
 import { showMessage } from './helpers.js';
-import { setupMap, updateMap } from './setup-map.js';
+import { updateAppInfo } from './load-client-ip.js';
 
 export function setSearchEvent() {
   const form = document.getElementById('form');
@@ -12,15 +12,7 @@ async function onSubmit() {
   const ip = document.getElementById('ip-input').value;
 
   if (isValid(ip)) {
-    // it works
-    const ipData = await fetchData(ip);
-
-    updateInfoBody(ipData);
-
-    let map;
-    map = setupMap(ipData.location.lat, ipData.location.lng);
-    map = updateMap(map, ipData.location.lat, ipData.location.lng);
-
+    updateAppInfo(ip);
     return;
   }
 
@@ -33,53 +25,4 @@ function isValid(ip) {
     /^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/m;
 
   return ip.match(regexp);
-}
-
-async function fetchData(ip) {
-  const ipifyUrl =
-    `https://geo.ipify.org/api/v1?apiKey=` +
-    `${config.ipifyKey}&ipAddress=${ip}`;
-
-  const response = await fetch(ipifyUrl);
-  const responseData = await response.json();
-  return responseData;
-}
-
-function getCachedIpData() {
-  return {
-    ip: '194.176.167.43',
-    location: {
-      country: 'RO',
-      region: 'Iaşi',
-      city: 'Iaşi',
-      lat: 47.16667,
-      lng: 27.6,
-      postalCode: '',
-      timezone: '+03:00',
-      geonameId: 675810,
-    },
-    domains: ['c13-2.uaic.ro'],
-    as: {
-      asn: 12675,
-      name: 'UAIC-Network',
-      route: '194.176.164.0/22',
-      domain: 'uaic.ro',
-      type: '',
-    },
-    isp: 'University "Alexandru Ioan Cuza" Iasi',
-    proxy: {
-      proxy: false,
-      vpn: false,
-      tor: false,
-    },
-  };
-}
-
-function updateInfoBody(ipData) {
-  document.getElementById('ip-address').innerHTML = ipData.ip;
-  document.getElementById('timezone').innerHTML = ipData.location.timezone;
-  document.getElementById('isp').innerHTML = ipData.isp;
-  document.getElementById('location').innerHTML =
-    `${ipData.location.country}, ` +
-    ` ${ipData.location.region}, ${ipData.location.city}`;
 }
