@@ -2,11 +2,13 @@
 // This file contains all application-wide Sass variables.
 // -----------------------------------------------------------------------------
 
-// Text colors
+// General colors
+$color-body-bg: hsl(0, 0%, 80%);
 $color-text-title: #fff;
 $color-text-mini-title: hsl(0, 0%, 59%);
 $color-rule: rgba(170, 170, 180, 0.3);
 
+// Popup colors
 $color-pop-up-message-bg-light: #000;
 $color-pop-up-message-text-light: #fff;
 

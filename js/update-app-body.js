@@ -2,19 +2,19 @@
 
 import { map } from './my-map.js';
 
-export async function updateAppInfo(ip) {
+export async function updateAppBody(ip) {
   const ipData = await fetchIpData(ip);
-  updateInfoBody(ipData);
+  updateElementsContent(ipData);
 
   if (map.exists()) {
-    map.update(ipData.latitude, ipData.longitude);
+    map.update(ipData.latitude, ipData.longitude, 'Somewhere around here', 18);
   } else {
     map.create(ipData.latitude, ipData.longitude);
-    map.update(ipData.latitude, ipData.longitude);
+    map.update(0, 0, null, 3);
   }
 }
 
-export async function fetchIpData(ip) {
+async function fetchIpData(ip) {
   const geoiplookup = ip
     ? 'https://json.geoiplookup.io/' + ip
     : 'https://json.geoiplookup.io/';
@@ -23,7 +23,7 @@ export async function fetchIpData(ip) {
   return responseData;
 }
 
-export function updateInfoBody(ipData) {
+function updateElementsContent(ipData) {
   document.getElementById('ip-address').innerHTML = ipData.ip;
   document.getElementById('timezone').innerHTML = ipData.timezone_name;
   document.getElementById('isp').innerHTML = ipData.isp;

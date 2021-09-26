@@ -1,5 +1,5 @@
 import { showMessage } from './helpers.js';
-import { updateAppInfo } from './load-client-ip.js';
+import { updateAppBody } from './update-app-body.js';
 
 export function setSearchEvent() {
   const form = document.getElementById('form');
@@ -11,12 +11,21 @@ async function onSubmit() {
 
   const ip = document.getElementById('ip-input').value;
 
+  if (isEmpty(ip)) {
+    updateAppBody();
+    return;
+  }
+
   if (isValid(ip)) {
-    updateAppInfo(ip);
+    updateAppBody(ip);
     return;
   }
 
   showMessage('Invalid IP address, try again');
+}
+
+function isEmpty(ip) {
+  return !Boolean(ip);
 }
 
 function isValid(ip) {

@@ -19,6 +19,7 @@ html {
 body {
   height: 100%;
   @include flexCenter(column);
+  background: $color-body-bg;
 }
 
 /**
