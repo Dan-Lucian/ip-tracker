@@ -3,15 +3,15 @@
 import { map } from './my-map.js';
 
 export async function updateAppBody(ip) {
-  const ipData = await fetchIpData(ip);
-  updateElementsContent(ipData);
-
   if (map.exists()) {
-    map.update(ipData.latitude, ipData.longitude, 'Somewhere around here', 18);
-  } else {
-    map.create(ipData.latitude, ipData.longitude);
-    map.update(0, 0, null, 3);
+    const ipData = await fetchIpData(ip);
+    updateElementsContent(ipData);
+    map.update(ipData.latitude, ipData.longitude, 'Somewhere around here', 14);
+    return;
   }
+
+  map.create(0, 0, 3);
+  map.update(0, 0, null, 3);
 }
 
 async function fetchIpData(ip) {
