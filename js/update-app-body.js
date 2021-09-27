@@ -10,7 +10,7 @@ export async function updateAppBody(ip = '') {
     return;
   }
 
-  map.create(0, 0, 3);
+  map.create(54, 15, 3);
 }
 
 async function fetchIpData(ip) {

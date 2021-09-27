@@ -1406,7 +1406,7 @@ main {
 }
 @media screen and (min-width: 768px) {
   main {
-    padding-bottom: 55px;
+    padding-bottom: 35px;
   }
 
   body {
@@ -1414,7 +1414,8 @@ main {
   }
 
   .app-title {
-    padding: 1.5rem;
+    padding: 2rem;
+    padding-bottom: 1.5rem;
   }
 
   .search-bar__input {
