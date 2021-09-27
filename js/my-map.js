@@ -4,7 +4,7 @@ class MyMap {
   create(lat, long, zoom) {
     // if mobile then position map off center lower
     if (window.innerWidth < 768) {
-      this._mobile = true;
+      this._isMobileScreen = true;
     }
 
     this._map = L.map('mapid').setView([lat, long], zoom);
@@ -25,9 +25,6 @@ class MyMap {
   }
 
   update(lat, long, zoom, msg) {
-    // update map coords
-    this._map.setView([lat, long], zoom);
-
     // add circle marker
     const circle = L.circle([lat, long], {
       color: 'red',
@@ -38,6 +35,15 @@ class MyMap {
 
     // set a tooltip for the marker
     circle.bindPopup(msg).openPopup();
+
+    // if mobile screen position map a bit lower and with less zoom
+    if (this._isMobileScreen) {
+      zoom -= 1;
+      lat += 0.005; // offset is grades
+    }
+
+    // update map coords
+    this._map.setView([lat, long], zoom);
 
     // request the fancy layer
     L.tileLayer(

@@ -1196,7 +1196,8 @@ main {
 
 .app-title {
   color: #fff;
-  padding: 1.5rem;
+  padding: 1rem;
+  padding-top: 1.5rem;
   font-size: 1.6rem;
   font-weight: 700;
   letter-spacing: 1px;
@@ -1234,7 +1235,7 @@ main {
 }
 
 .search-bar__input {
-  margin: 1rem;
+  margin: 0.8rem;
   background-color: inherit;
   outline: none;
   border: none;
@@ -1260,18 +1261,18 @@ main {
 .app-body {
   position: absolute;
   z-index: 500;
-  top: 170px;
+  top: 150px;
   border-radius: 10px;
   background: #fff;
   text-align: center;
   font-weight: 700;
-  padding: 1.5rem;
+  padding: 0.8rem;
   width: 90vw;
   max-width: 1000px;
 }
 
 .app-info:not(:last-of-type) {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .app-info__title {
@@ -1404,18 +1405,32 @@ main {
   }
 }
 @media screen and (min-width: 768px) {
-  .app-body {
-    column-count: 4;
-    column-rule: 2px solid rgba(170, 170, 180, 0.3);
-    text-align: left;
-  }
-
   main {
     padding-bottom: 55px;
   }
 
   body {
     font: normal 125%/1.4 "Open Sans", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  }
+
+  .app-title {
+    padding: 1.5rem;
+  }
+
+  .search-bar__input {
+    margin: 1rem;
+  }
+
+  .app-body {
+    top: 170px;
+    padding: 1.5rem;
+    column-count: 4;
+    column-rule: 2px solid rgba(170, 170, 180, 0.3);
+    text-align: left;
+  }
+
+  .app-info:not(:last-of-type) {
+    margin-bottom: 1.5rem;
   }
 }
 

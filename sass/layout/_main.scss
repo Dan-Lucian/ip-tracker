@@ -8,7 +8,7 @@ main {
   @include flexCenter(column);
 
   position: relative;
-  
+
   background-image: url(../../img/pattern-bg.png);
   background-repeat: no-repeat;
   background-size: cover;
@@ -16,7 +16,8 @@ main {
 
 .app-title {
   color: $color-text-title;
-  padding: 1.5rem;
+  padding: 1rem;
+  padding-top: 1.5rem;
   font-size: 1.6rem;
   font-weight: 700;
   letter-spacing: 1px;

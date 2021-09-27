@@ -3,17 +3,31 @@
 // -----------------------------------------------------------------------------
 
 @media screen and (min-width: map-get($breakpoints, 'medium')) {
+  main {
+    padding-bottom: 55px;
+  }
+
+  body {
+    font: normal 125% / 1.4 $text-font-stack;
+  }
+
+  .app-title {
+    padding: 1.5rem;
+  }
+
+  .search-bar__input {
+    margin: 1rem;
+  }
+
   .app-body {
+    top: 170px; // looks good
+    padding: 1.5rem;
     column-count: 4;
     column-rule: 2px solid $color-rule;
     text-align: left;
   }
 
-  main{
-    padding-bottom: 55px;
-  }
-
-  body{
-    font: normal 125% / 1.4 $text-font-stack;
+  .app-info:not(:last-of-type) {
+    margin-bottom: 1.5rem;
   }
 }
