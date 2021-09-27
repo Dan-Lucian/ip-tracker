@@ -12,6 +12,8 @@ async function onSubmit() {
   const ip = document.getElementById('ip-input').value;
 
   if (isEmpty(ip)) {
+    // if no ip provided it will acces the api without ip 
+    // no ip will yield client's ip
     updateAppBody();
     return;
   }

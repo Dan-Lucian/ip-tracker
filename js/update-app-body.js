@@ -2,22 +2,19 @@
 
 import { map } from './my-map.js';
 
-export async function updateAppBody(ip) {
+export async function updateAppBody(ip = '') {
   if (map.exists()) {
     const ipData = await fetchIpData(ip);
     updateElementsContent(ipData);
-    map.update(ipData.latitude, ipData.longitude, 'Somewhere around here', 14);
+    map.update(ipData.latitude, ipData.longitude, 14, 'Somewhere around here');
     return;
   }
 
   map.create(0, 0, 3);
-  map.update(0, 0, null, 3);
 }
 
 async function fetchIpData(ip) {
-  const geoiplookup = ip
-    ? 'https://json.geoiplookup.io/' + ip
-    : 'https://json.geoiplookup.io/';
+  const geoiplookup = 'https://json.geoiplookup.io/' + ip;
   const response = await fetch(geoiplookup);
   const responseData = await response.json();
   return responseData;
