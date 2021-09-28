@@ -13,6 +13,7 @@
   padding: 0.8rem;
   width: 90vw;
   max-width: 1000px;
+  @include flexCenter(column);
 }
 
 .app-info:not(:last-of-type) {
@@ -20,7 +21,11 @@
 }
 
 .app-info__title {
-  font-size: 0.7rem;
+  font-size: 0.9rem;
   text-transform: uppercase;
   color: $color-text-mini-title;
+}
+
+.app-info {
+  flex: 1 1 0px;
 }
