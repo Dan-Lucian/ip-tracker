@@ -1314,7 +1314,8 @@ main {
   color: official;
   display: inline-block;
   position: absolute;
-  bottom: 100px;
+  z-index: 9000;
+  top: 430px;
   width: 80px;
   height: 80px;
 }
@@ -1333,7 +1334,7 @@ main {
   width: 6px;
   height: 18px;
   border-radius: 20%;
-  background: #969696;
+  background: #5262c6;
 }
 
 .lds-spinner div:nth-child(1) {
@@ -1432,6 +1433,10 @@ main {
 
   .app-info:not(:last-of-type) {
     margin-bottom: 1.5rem;
+  }
+
+  .lds-spinner {
+    top: 340px;
   }
 }
 

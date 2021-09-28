@@ -3,14 +3,24 @@
 import { map } from './my-map.js';
 
 export async function updateAppBody(ip = '') {
+  addLoadingAnimation();
+
   if (map.exists()) {
     const ipData = await fetchIpData(ip);
     updateElementsContent(ipData);
-    map.update(ipData.latitude, ipData.longitude, 14, 'Somewhere around here');
+
+    map.setLat(ipData.latitude);
+    map.setLong(ipData.longitude);
+    map.update(13, 'Somewhere around here');
+    removeLoadingAnimation();
+
     return;
   }
 
-  map.create(54, 15, 3);
+  map.setLat(53);
+  map.setLong(15);
+  map.create(3); // zoom
+  removeLoadingAnimation();
 }
 
 async function fetchIpData(ip) {
@@ -26,4 +36,12 @@ function updateElementsContent(ipData) {
   document.getElementById('isp').innerHTML = ipData.isp;
   document.getElementById('location').innerHTML =
     `${ipData.country_name}, ` + ` ${ipData.region}, ${ipData.city}`;
+}
+
+function addLoadingAnimation() {
+  document.getElementById('loading-animation').style.display = 'inline-block';
+}
+
+function removeLoadingAnimation() {
+  document.getElementById('loading-animation').style.display = 'none';
 }
