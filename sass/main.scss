@@ -4,8 +4,7 @@
 @import
   'abstracts/variables', 
   'abstracts/functions', 
-  'abstracts/mixins', 
-  'abstracts/breakpoints';
+  'abstracts/mixins';
 
 // 2. Vendors
 @import
@@ -14,24 +13,16 @@
 
 // 3. Base stuff
 @import
-  'base/base', 
-  'base/fonts',
+  'base/base',
   'base/typography', 
   'base/helpers';
 
 // 4. Layout-related sections
 @import
-  'layout/header', 
-  'layout/footer', 
-  'layout/forms', 
-  'layout/grid',
-  'layout/navigation', 
-  'layout/sidebar',
   'layout/main';
 
 // 5. Components
 @import
-  'components/buttons',
   'components/boxes',
   'components/search-bar',
   'components/app-body', 
@@ -39,15 +30,7 @@
   'components/map', 
   'components/loading-spinner';
 
-// 6. Page-specific styles
-@import
-  'pages/home';
 
 // 7. Themes
 @import
-  'themes/default',
   'themes/media-queries';
-
-// 8. Shameful hacks
-@import
-  'shame/shame';
