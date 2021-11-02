@@ -1,5 +1,10 @@
 # Ip tracker
 
+### What is this?
+* A web application to locate on a map a certain IP.
+* You can locate your IP and location if no IP provided in the search bar.
+* The app is mobile friendly, all desktop features are available for the mobile users as well.
+ 
  
 ### What I've learned from doing this project
 * How to use regexp for validation (here ip validation).
@@ -18,13 +23,6 @@
 ### Designs I had
 ![alt text](https://raw.githubusercontent.com/Dan-Lucian/ip-tracker/main/design/desktop-design.jpg "Desktop design")
 ![alt text](https://raw.githubusercontent.com/Dan-Lucian/ip-tracker/main/design/mobile-design.jpg "Mobile design")
- 
- 
-### What can the app do
-* Tracks and locates a certain IP address.
-* An empty sent search will track the current client and show it's location.
-* The map is interactable, can zoom in/out move around.
-* Mobile friendly.
 
 
 ### Possible future improvements
